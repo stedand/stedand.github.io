@@ -3,78 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Hex Guessing Game</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    #numberBox {
-      display: inline-block;
-      padding: 25px 50px;
-      font-size: 2.5rem;
-      border: 2px solid #333;
-      cursor: pointer;
-      user-select: none;
-      margin-bottom: 10px;
-    }
-
-    #label {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="number" onclick="changeBase()"></button>
+  <label id="label" for="number"></label>
 
-  <div id="numberBox">00</div>
-  <div id="label">HEX</div>
-  <br>
-  <button onclick="generateNumber()">New Number</button>
+  <button onclick="nextNumber()">Next Number</button>
 
-  <script>
-    const numberBox = document.getElementById("numberBox");
-    const label = document.getElementById("label");
-
-    let currentNumber = 0;
-    let showingHex = true;
-
-    function generateNumber() {
-      currentNumber = Math.floor(Math.random() * 256);
-      showingHex = true;
-      updateDisplay();
-    }
-
-    function updateDisplay() {
-      if (showingHex) {
-        numberBox.textContent = currentNumber
-          .toString(16)
-          .toUpperCase()
-          .padStart(2, '0');
-        label.textContent = "HEX";
-      } else {
-        numberBox.textContent = currentNumber;
-        label.textContent = "DECIMAL";
-      }
-    }
-
-    // Tap to toggle notation
-    numberBox.addEventListener("click", () => {
-      showingHex = !showingHex;
-      updateDisplay();
-    });
-
-    // Initialize
-    generateNumber();
-  </script>
-
+  <script src="main.js"></script>
 </body>
 </html>
