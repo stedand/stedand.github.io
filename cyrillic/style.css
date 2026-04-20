@@ -1,0 +1,18 @@
+* {
+  font-size: 1rem;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#letter {
+  font-size: 3rem;
+  font-family: serif;
+  width: 10rem;
+}
